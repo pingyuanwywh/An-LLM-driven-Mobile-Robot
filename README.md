@@ -1,4 +1,4 @@
-# JetRover — Autonomous Mobile Manipulation for Ground-Level Grasping
+# Autonomous Mobile Manipulation for Ground-Level Grasping
 
 > An LLM-driven mobile manipulator that takes a natural-language instruction, navigates to a target, and grasps it — closing the gap between meter-level position priors and centimeter-level grasping.
 
@@ -9,7 +9,7 @@
   <img src="docs/demo.gif" width="600" alt="End-to-end demo">
 </p>
 
-📺 **Full demo:** [YouTube link] · [Bilibili link]
+📺 **Full demo:** [[YouTube link] · [Bilibili link]](https://b23.tv/y1Y0TMn)
 
 ---
 
@@ -31,20 +31,20 @@ The target scenario is air–ground coordination: an aerial platform provides a 
 | Navigation delivery | ±10 cm |
 | Grasp capture window | **23 cm × 8 cm** |
 
-Navigation gets the robot *near* the target, but not *into* the grasp window. **The core of this project is the layer that bridges that gap.**
+Navigation gets the robot *near* the target, but not *into* the grasp window. 
 
 ---
 
 ## System architecture
 
 ```
-Translator   Natural language → structured commands   (Qwen-2.5 · structured outputs)
+Natural language   Translator → structured commands   (Qwen-2.5 · structured outputs)
     │
     ▼
-Grounding    Symbolic goal → physical coordinates      (closed-loop visual approach)  ★
+goto can_1    Skill: Navigation      (move_base + TEB, ROS Noetic)  ★
     │
     ▼
-Skill Layer  Navigation / grasp / place                (move_base + TEB, ROS Noetic)
+Near can_1  Grounding, then grasp / place                (closed-loop visual approach)
     │
     ▼
 Verifier     Execution outcome from a physical signal  (gripper servo readback)       ★
@@ -53,9 +53,6 @@ Verifier     Execution outcome from a physical signal  (gripper servo readback) 
 Memory       Task state (visited cans)
 ```
 
-★ marks the two layers that are the main contribution.
-
-> Replace this ASCII block with `docs/architecture.svg` when ready.
 
 ---
 
@@ -135,7 +132,7 @@ ROS Noetic · move_base / TEB · hector SLAM · OpenCV (LAB color space) · dept
   <img src="docs/demo.gif" width="600" alt="端到端演示">
 </p>
 
-📺 **完整演示:** [Bilibili 链接] · [YouTube 链接]
+📺 **完整演示:** [[YouTube link] · [Bilibili link]](https://b23.tv/y1Y0TMn)
 
 ---
 
@@ -157,7 +154,7 @@ ROS Noetic · move_base / TEB · hector SLAM · OpenCV (LAB color space) · dept
 | 导航交付 | ±10 cm |
 | 抓取捕获窗口 | **23 cm × 8 cm** |
 
-导航能把车送到目标附近,但送不进抓取窗口。**本项目的核心,就是填平这个落差的那一层。**
+导航能把车送到目标附近,但送不进抓取窗口。
 
 ---
 
@@ -167,23 +164,19 @@ ROS Noetic · move_base / TEB · hector SLAM · OpenCV (LAB color space) · dept
 Translator   自然语言 → 结构化命令        (Qwen-2.5 · structured outputs)
     │
     ▼
-Grounding    符号目标 → 物理坐标          (视觉闭环逼近)  ★
+goto can_1    skill：导航         (move_base + TEB, ROS Noetic)
     │
     ▼
-Skill Layer  导航 / 抓取 / 放置           (move_base + TEB, ROS Noetic)
+车到罐子附近  逼近环 然后执行skill：夹取          
     │
     ▼
-Verifier     从物理信号判定执行结果       (夹爪舵机回读)  ★
+Verifier     从物理信号判定执行结果       (夹爪舵机回读)  
     │
     ▼
 Memory       任务状态(已访问的罐子)
 ```
 
-★ 标记的两层是主要贡献。
 
-> 就绪后用 `docs/architecture.svg` 替换这段 ASCII。
-
----
 
 ## 技术亮点
 
@@ -246,4 +239,4 @@ ROS Noetic · move_base / TEB · hector SLAM · OpenCV(LAB 色彩空间)· 深�
 
 ---
 
-> 完整源码整理中,可应requests提供或在面试时讲解。
+> 完整源码整理中,可应需提供。
