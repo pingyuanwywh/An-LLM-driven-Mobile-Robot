@@ -124,7 +124,7 @@ ROS Noetic · move_base / TEB · hector SLAM · OpenCV (LAB color space) · dept
 
 # 中文说明
 
-# JetRover — 面向地面抓取的自主移动操作系统
+# 面向地面抓取的自主移动操作系统
 
 > 一个 LLM 驱动的移动机械臂:接收一句自然语言指令,自主导航到目标并抓取——填平米级位置先验与厘米级抓取之间的落差。
 
