@@ -9,7 +9,7 @@
   <img src="docs/demo.gif" width="600" alt="End-to-end demo">
 </p>
 
-📺 **Full demo:** [[YouTube link] · [Bilibili link]](https://b23.tv/y1Y0TMn)
+📺 **Full demo:** [[YouTube link] · [Bilibili link]](https://b23.tv/BV1xXuu6cEis)
 
 ---
 
@@ -132,7 +132,7 @@ ROS Noetic · move_base / TEB · hector SLAM · OpenCV (LAB color space) · dept
   <img src="docs/demo.gif" width="600" alt="端到端演示">
 </p>
 
-📺 **完整演示:** [[YouTube link] · [Bilibili link]](https://b23.tv/y1Y0TMn)
+📺 **完整演示:** [[YouTube link] · [Bilibili link]](https://b23.tv/BV1xXuu6cEis)
 
 ---
 
